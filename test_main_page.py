@@ -9,6 +9,9 @@ from .pages.basket_page import BasketPage
 class TestLoginFromMainPage:
 
     def test_guest_can_go_to_login_page(self, browser):
+        """
+        Тест проверяет, что гость может открыть страницу авторизации. Позитивный сценарий.
+        """
         link = "http://selenium1py.pythonanywhere.com/"
         page = MainPage(browser, link)
         page.open()
@@ -17,6 +20,9 @@ class TestLoginFromMainPage:
         login_page.should_be_login_page()
 
     def test_guest_should_see_login_link(self, browser):
+        """
+        Тест проверяет, что ссылка на страницу авторизации - валидная.
+        """
         link = "http://selenium1py.pythonanywhere.com/"
         page = MainPage(browser, link)
         page.open()
@@ -24,10 +30,12 @@ class TestLoginFromMainPage:
 
 
 def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
+    """
+    Тест проверяет, что гость открывает страницу с корзиной. Корзина пуста, и имеется об этом соответствующая надпись.
+    """
     link = "http://selenium1py.pythonanywhere.com/"
     page = BasketPage(browser, link)
     page.open()
     page.go_to_basket_page()
     page.should_be_basket_empty()
     page.is_basket_label_empty()
-

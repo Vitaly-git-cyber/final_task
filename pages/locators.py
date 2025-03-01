@@ -11,7 +11,7 @@ class LoginPageLocators:
     REGISTRATION_EMAIL = (By.ID, "id_registration-email")
     REGISTRATION_PASSWORD = (By.ID, "id_registration-password1")
     REGISTRATION_REPEAT_PASSWORD = (By.ID, "id_registration-password2")
-    REGISTRATION_BUTTON = (By.XPATH,"//button[@name='registration_submit']")
+    REGISTRATION_BUTTON = (By.XPATH, "//button[@name='registration_submit']")
 
 
 class ProductPageLocators:
@@ -29,6 +29,7 @@ class BasePageLocators:
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
     BASKET_LINK = (By.XPATH, "//span/a[contains(@class, 'default')]")
     USER_ICON = (By.CSS_SELECTOR, ".icon-user")
+
 
 class BasketPageLocators:
     BASKET_PRODUCTS = (By.XPATH, "//form[@class='basket_summary']")
